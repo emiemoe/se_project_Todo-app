@@ -14,4 +14,4 @@ Each class is given it's own script page and then imported the the main index.js
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+[https://github.com/emiemoe/se_project_Todo-app.git]
