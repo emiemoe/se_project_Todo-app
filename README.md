@@ -1,14 +1,14 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+In this simple Todo App we can create tasks, set the date, check off when completed and then be able to delete the assisgned task when finished.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+In this project which was as the name states was a Todo App where we had to work on the functionality of the code and we inplimented and organized the javascript making it easier to read.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+Each class is given it's own script page and then imported the the main index.js page. we've generated unique IDs by importing it to the index.js page making the code be able to generate it's own unique ID's. I used the browser to check my code for mistakes making it easier to track down where the inconsistency was to be able to fix it.
 
 ## Deployment
 
