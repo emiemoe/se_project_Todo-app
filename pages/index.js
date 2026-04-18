@@ -1,8 +1,7 @@
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
-console.log(uuidv4());
 import { initialTodos, validationConfig } from "../util/constants.js";
 import Todo from "../components/Todo.js";
-import FormValidation from "../components/FormValidation.js";
+import FormValidator from "../components/FormValidation.js";
 
 const addTodoButton = document.querySelector(".button_action_add");
 const addTodoPopup = document.querySelector("#add-todo-popup");
@@ -78,5 +77,5 @@ initialTodos.forEach((item) => {
   todosList.append(todo);
 });
 
-const newValidator = new FormValidation(validationConfig, addTodoForm);
+const newValidator = new FormValidator(validationConfig, addTodoForm);
 newValidator.enableValidation(validationConfig);

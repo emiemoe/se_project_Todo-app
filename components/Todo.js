@@ -14,7 +14,7 @@ class Todo {
     });
   }
 
-  _generatingCheckboxEl() {
+  _generateCheckboxEl() {
     this._todoCheckboxEl = this._todoElement.querySelector(".todo__completed");
     this._todoLabel = this._todoElement.querySelector(".todo__label");
     this._todoCheckboxEl.checked = this._data.completed;
@@ -44,7 +44,7 @@ class Todo {
       )}`;
     }
 
-    this._generatingCheckboxEl();
+    this._generateCheckboxEl();
     this._setEventListeners();
 
     return this._todoElement;
