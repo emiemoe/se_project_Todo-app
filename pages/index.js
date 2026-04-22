@@ -54,6 +54,7 @@ addTodoButton.addEventListener("click", () => {
 
 addTodoCloseBtn.addEventListener("click", () => {
   closeModal(addTodoPopup);
+  newValidator.resetValidation();
 });
 
 addTodoForm.addEventListener("submit", (evt) => {

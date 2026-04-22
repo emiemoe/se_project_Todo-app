@@ -13,7 +13,7 @@ class FormValidator {
     this._errorElementId = `#${inputElement.id}-error`;
     this._errorElement = this._formElement.querySelector(this._errorElementId);
     inputElement.classList.add(this._inputErrorClass);
-    this._errorElement.textContent = this.errorMessage;
+    this._errorElement.textContent = errorMessage;
     this._errorElement.classList.add(this._errorClass);
   }
 
@@ -21,19 +21,15 @@ class FormValidator {
     this._errorElementId = `#${inputElement.id}-error`;
     this._errorElement = this._formElement.querySelector(this._errorElementId);
     inputElement.classList.remove(this._inputErrorClass);
-    this._errorElement.classList.remove(errorMessage);
+    this._errorElement.classList.remove(this._errorClass);
     this._errorElement.textContent = "";
   }
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      this._showInputError(
-        this._formElement,
-        inputElement,
-        inputElement.validationMessage,
-      );
+      _showInputError(inputElement, inputElement.validationMessage);
     } else {
-      this._hideInputError(this._formElement, inputElement);
+      _hideInputError(inputElement);
     }
   }
 
@@ -78,10 +74,10 @@ class FormValidator {
     this._setEventListeners();
   }
   resetValidation() {
-    this._formElement.reset();
-    this._inputList.forEach((input) =>
-      this._hideInputError(this._formElement, input),
-    );
+    this._formElement.reset(); // Resets form values (optional, based on requirement)
+    this._inputList.forEach((input) => {
+      this._hideInputError(this._formElement, input); // Hides errors
+    });
     this._toggleButtonState();
   }
 }
