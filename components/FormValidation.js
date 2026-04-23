@@ -7,13 +7,14 @@ class FormValidator {
     this._inputErrorClass = settings.inputErrorClass;
     this._inactiveButtonClass = settings.inactiveButtonClass;
     this._formElement = formElement;
+    this._errorMessage = settings.errorMessage;
   }
 
   _showInputError(inputElement) {
     this._errorElementId = `#${inputElement.id}-error`;
     this._errorElement = this._formElement.querySelector(this._errorElementId);
     inputElement.classList.add(this._inputErrorClass);
-    this._errorElement.textContent = errorMessage;
+    this._errorElement.textContent = this._errorMessage;
     this._errorElement.classList.add(this._errorClass);
   }
 
@@ -27,9 +28,9 @@ class FormValidator {
 
   _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
-      _showInputError(inputElement, inputElement.validationMessage);
+      this._showInputError(inputElement, inputElement.validationMessage);
     } else {
-      _hideInputError(inputElement);
+      this._hideInputError(inputElement);
     }
   }
 
