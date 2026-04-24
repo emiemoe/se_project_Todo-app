@@ -10,11 +10,11 @@ class FormValidator {
     this._errorMessage = settings.errorMessage;
   }
 
-  _showInputError(inputElement) {
+  _showInputError(inputElement, errorMessage) {
     this._errorElementId = `#${inputElement.id}-error`;
     this._errorElement = this._formElement.querySelector(this._errorElementId);
     inputElement.classList.add(this._inputErrorClass);
-    this._errorElement.textContent = this._errorMessage;
+    this._errorElement.textContent = errorMessage;
     this._errorElement.classList.add(this._errorClass);
   }
 
@@ -75,9 +75,9 @@ class FormValidator {
     this._setEventListeners();
   }
   resetValidation() {
-    this._formElement.reset(); // Resets form values (optional, based on requirement)
+    this._formElement.reset();
     this._inputList.forEach((input) => {
-      this._hideInputError(this._formElement, input); // Hides errors
+      this._hideInputError(input);
     });
     this._toggleButtonState();
   }
